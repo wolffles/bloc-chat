@@ -10,18 +10,7 @@
 </head>
 <body>
     <!-- nav bar -->
-    <div class="sidebar">
-        <div class="top">
-            <h1>Bloc Chat
-                <button class="newroom" type="button">+</button>
-            </h1>
-        </div>
-        <div ng-repeat="noun in home.rooms">
-            <li ui-sref="home">{{ noun.name }}</li> 
-            
-        </div>
-    </div>
-    <div class="content"><ui-view></ui-view></div>
+   <ui-view></ui-view>
     
     
     
