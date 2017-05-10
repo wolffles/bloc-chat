@@ -6,6 +6,14 @@
         var rooms = $firebaseArray(ref);
         
         Room.all = rooms;
+        
+        Room.add = function(room) {
+            rooms.$add(room);
+        } 
+        
+        Room.delete = function(index) {
+            rooms.$remove(index)
+        }
 
     return Room;
     }
