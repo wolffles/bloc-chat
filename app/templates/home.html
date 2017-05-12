@@ -1,12 +1,17 @@
  <div class="sidebar">
         <div class="top">
             <h1>Bloc Chat
-                <button type="button" class="btn btn-default" ng-click="home.addRoom()">+</button>
+                <button type="button" class="btn" ng-click="home.addRoom()">+</button>
             </h1>
         </div>
         <div ng-repeat="noun in home.rooms">
-            <li ui-sref="home">{{ noun.name }}</li> 
-            
+            <a class="room" ng-click="home.setCurrentRoom(noun)">{{noun.name}}</a> 
         </div>
     </div>
-<div class="content"></div>
+<div class="content">
+    <h1>{{home.currentRoom.name}}</h1>
+     <div class="messages-body" ng-repeat="message in home.messages">
+        <div class="message">{{ message.username }}: {{ message.content }}</div>
+        <div class="time">{{ message.sentAt | date : "shortTime" }}</div>
+    </div>
+</div>
