@@ -10,8 +10,12 @@
     </div>
 <div class="content">
     <h1>{{home.currentRoom.name}}</h1>
-     <div class="messages-body" ng-repeat="message in home.messages">
-        <div class="message">{{ message.username }}: {{ message.content }}</div>
+     <div class="messages-all" ng-repeat="message in home.messages">
+        <div class="messages-one">{{ message.username }}: {{ message.content }}</div>
         <div class="time">{{ message.sentAt | date : "shortTime" }}</div>
+    </div>
+    <div class="messages-create">
+        <input class="message-input" type="text" name="input" placeholder="Type your message here" class ng-model='home.newMessage.content'>
+        <button class="btn-new-message" type="button" ng-click="home.sendMessage()">send-message</button>
     </div>
 </div>
