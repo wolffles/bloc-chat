@@ -4,6 +4,7 @@
         this.currentUser = $cookies.get('blocChatCurrentUser')
         console.log(this);
         
+        
         this.setCurrentRoom = function(room){
             this.currentRoom = room;
             console.log(this.currentRoom);
@@ -20,11 +21,17 @@
                 controller: 'ModalCtrl as modal'
             });
         }
+        
+        this.deleteroom = function() {
+            Room.delete(this.currentRoom)
+        };
     
         this.sendMessage = function () {
             this.newMessage.roomID = this.currentRoom.$id;
             this.newMessage.username = this.currentUser;
+            this.newMessage.sentAt = firebase.database.ServerValue.TIMESTAMP;
             Message.send(this.newMessage);
+            this.newMessage.content = this.newMessage.placeholder;
         }
         
         

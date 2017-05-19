@@ -9,12 +9,14 @@
         </div>
     </div>
 <div class="content">
-    <h1>{{home.currentRoom.name}}</h1>
+    <h1>{{home.currentRoom.name}}
+        <button ng-hide="!home.currentRoom.name" class="ng-hide" type="button" ng-click="home.deleteroom()"> remove room</button>
+    </h1>
      <div class="messages-all" ng-repeat="message in home.messages">
         <div class="messages-one">{{ message.username }}: {{ message.content }}</div>
         <div class="time">{{ message.sentAt | date : "shortTime" }}</div>
     </div>
-    <div class="messages-create">
+    <div ng-hide="!home.currentRoom.name" class="ng-hide">
         <input class="message-input" type="text" name="input" placeholder="Type your message here" class ng-model='home.newMessage.content'>
         <button class="btn-new-message" type="button" ng-click="home.sendMessage()">send-message</button>
     </div>
