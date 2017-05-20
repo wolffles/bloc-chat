@@ -6,7 +6,7 @@
                                     console.log(this.user)
                                     console.log($cookies.get('blocChatCurrentUser'))
                                    }
-        this.cancel = function() {$uibModalInstance.dismiss(/*'cancel'*/)}
+        this.cancel = function() {$uibModalInstance.dismiss()}
         
         //
     }])

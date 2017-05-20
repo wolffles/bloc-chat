@@ -1,5 +1,7 @@
-<div class='modalbox'>
-    <h3>Sign in/ Sign up</h3>
-    <input class='new' type="text" ng-model="modal.user" required>
-    <button class="confirm" ng-click="modal.makename()"  ng-disabled="modal.user == null">confirm</button>
+<div class='signin'>
+    <div class="box">
+        <h3>Sign in/ Sign up</h3>
+        <input class='user-input' type="text" ng-model="modal.user" required>
+        <button class="confirm" ng-click="modal.makename()"  ng-disabled="modal.user == null">confirm</button>
+    </div>
 </div>

@@ -1,29 +1,28 @@
 
 
 html { 
-height: 100%; /* sets the amount of broswer  window html takes*/
+height: 100vh; /* sets the amount of broswer  window html takes*/
 font-size: 100%;
 }
 
 body {
-    position: relative;
+    position: fixed;
     font-family:'Open sans';
     color: black;
+    height: 100vh;
     max-height: 100%; /* min height of body  to be 100%*/
-    
 }
 
 
 .sidebar{
-    position: relative;
-    margin-top:0px;
-    margin-bottom:10px;
-    padding-bottom: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    height: 100vh;
     width: 200px;
-    height: 100%;
     border-style: none;
     background-color:rgba(0,100,225,.5);/* the "a" in rgba stands for alpha, or the opacity of the color */
-    z-index: 1; /*larger values sit above smaller values, by default broswers z values are "auto" */
+    z-index: 0; /*larger values sit above smaller values, by default broswers z values are "auto" */
     float: left;
 }
 .sidebar h1{
@@ -34,7 +33,7 @@ body {
 }
 
 
-.sidebar li{
+.sidebar a{
     color: black;
     list-style: none;
     padding-left: 3rem;
@@ -44,10 +43,23 @@ body {
     position: relative;
 }
 
+.signin{
+    top: 0px;
+    left: 0px;
+    background: #808080;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index:100;
+}
+
+.signin .box {
+    position: relative;
+    text-align: center;
+}
 
 @media (min-width:640px) {
     html { font-size: 100%; }
-    
     .sidebar{ width: 30%; }
 }
 
