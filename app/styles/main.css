@@ -23,7 +23,7 @@ body {
     border-style: none;
     background-color:rgba(0,100,225,.5);/* the "a" in rgba stands for alpha, or the opacity of the color */
     z-index: 0; /*larger values sit above smaller values, by default broswers z values are "auto" */
-    float: left;
+    float:left;
 }
 .sidebar h1{
     text-align: center;
@@ -40,7 +40,12 @@ body {
 }
 
 .content{
-    position: relative;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 200px;
+    padding-left: 15%;
+    z-index:0;
 }
 
 .signin{
@@ -61,12 +66,24 @@ body {
 @media (min-width:640px) {
     html { font-size: 100%; }
     .sidebar{ width: 30%; }
+    .content{
+        position: fixed;
+        height: 100vh;
+        left: 30%;
+        top: 0px;
+    }
 }
 
 /* Large screens (1024px) */
 @media (min-width: 1024px) {
     html{ font-size:100%; }
     .sidebar{ width: 25%;}
+    .content{
+        position: fixed;
+        height: 100vh;
+        left: 25%;
+        top: 0px;
+    }
     
 }
 
